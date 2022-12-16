@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Tracker</title>
+
+  <link rel="icon" type="image/x-icon" href="favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Ubuntu&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+  <!-- include bootstrap css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+
+  <link rel="stylesheet" href="styles.css">
+
+
+
+
+
+
+
+
+  <!-- Title Header -->
+
+  <section class="colored-section" id="title">
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+      <a class="navbar-brand" href="">Time Tracker</a>
+    </nav>
+
+    <div class="container-fluid">
+
+
+
+      <!-- Title -->
+
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 class="big-heading">Increase Your Productivity</h1>
+        </div>
+        <div class="col-lg-6">
+          <img src="productivity.png" class="title-img" alt="productivity">
+        </div>
+      </div>
+      <!-- button to add task -->
+      <div class="row">
+        <div class="col-md-12">
+          <button type="button" class="btn btn-light task-btn btn-large btn" data-toggle="modal" data-target="#addTaskModal">Add Task</button>
+
+          <!-- form to delete project -->
+          <form method="POST" onsubmit="return taskObj.deleteProject(this);" style="display: contents;">
+            <select name="project" class="form-control task-btn" style="display: initial; width: 200px" id="form-task-hour-calculator-all-projects"></select>
+            <input type="submit" class="btn btn-dark task-btn btn-large btn" value="Delete Project">
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="container-fluid">
+
+    <!-- show all tasks -->
+    <table class="table">
+      <caption class="text-center">All Tasks</caption>
+      <tr>
+        <th>Task</th>
+        <th>Project</th>
+        <th>Status</th>
+        <th>Duration</th>
+        <th>Date</th>
+        <th>Action</th>
+      </tr>
+
+      <tbody id="all-tasks"></tbody>
+    </table>
+
+
+    <!-- modal to add project and task -->
+    <div class="modal fade" id="addTaskModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Task</h5>
+            <button class="close" type="button" class="btn btn-dark task-btn btn-large btn" data-dismiss="modal">x</button>
+          </div>
+
+          <div class="modal-body">
+            <form method="POST" onsubmit="return taskObj.addTask(this);" id="form-task-hour-calculator">
+
+              <!-- select project from already created -->
+              <div class="form-group">
+                <label>Project</label>
+                <select name="project" id="add-task-project" class="form-control" required></select>
+              </div>
+
+              <!-- create new project -->
+              <div class="form-group">
+                <label>New Project</label>
+                <input type="text" name="new_project" id="add-project" class="form-control" placeholder="Project Name">
+
+                <button type="button" class="btn btn-dark task-btn btn-large btn" onclick="taskObj.addProject();" class="btn btn-primary">Add Project</button>
+              </div>
+
+              <!-- enter task -->
+              <div class="form-group">
+                <label>Task</label>
+                <input type="text" name="task" class="form-control" placeholder="What are you going to do ?" required />
+              </div>
+            </form>
+          </div>
+
+          <!-- form submit button -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark task-btn btn-large btn" data-dismiss="modal">Close</button>
+            <button type="submit" form="form-task-hour-calculator" class="btn btn-dark task-btn btn-large btn">Add Task</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <footer id="footer">
+    <div class="container-fluid">
+      <p>© Copyright 2022 Time Tracker</p>
+    </div>
+
+
+  </footer>
+  <!-- include jquery and bootstrap js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  <!-- include sweetalert for displaying dialog messages -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  <script src="index.js"></script>
+
+</body>
+
+</html>

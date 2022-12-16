@@ -1,0 +1,113 @@
+ /* style when project is started */
+ .started {
+   color: white;
+   font-weight: bold;
+   background: green;
+   padding: 5px;
+   border-radius: 5px;
+ }
+
+ /* style when project is completed */
+ .completed {
+   color: white;
+   font-weight: bold;
+   background: greenyellow;
+   padding: 5px;
+   border-radius: 5px;
+ }
+
+ h1, h2, h3, h4, h5, h6 {
+   font-family: 'Montserrat', sans-serif;
+   font-weight: bold;
+ }
+
+ h1 {
+   font-size: 4rem;
+ }
+
+ body {
+   font-family: 'Montserrat', sans-serif;
+ }
+
+ /* Title */
+ #title .container-fluid {
+   padding: 3% 15% 7%;
+   text-align: left;
+ }
+
+ /* Container Section */
+ .container-fluid {
+   padding: 7% 15%;
+ }
+
+ .colored-section {
+   background-color: #ff4c68;
+   color: #fff;
+ }
+
+ /* Navigation Bar */
+ .navbar-brand {
+   font-family: 'Ubuntu', sans-serif;
+   font-size: 2.5rem;
+   font-weight: bold;
+ }
+
+ nav {
+   margin-bottom: 2.5rem;
+ }
+
+ .nav-item {
+   padding: 0 18px;
+ }
+
+ .nav-link {
+   font-size: 1.2rem;
+   font-weight: 100;
+ }
+
+ /* Task Buttons */
+ .task-btn {
+   margin: 5% 3% 5% 0;
+ }
+
+ /* Heading Section */
+ .big-heading {
+   font-size: 3.5rem;
+   font-weight: bold;
+   line-height: 1.5;
+ }
+
+ .section-heading {
+   font-size: 3rem;
+   line-height: 1.5;
+ }
+
+ /* Title Image */
+ .title-img {
+   width: 60%;
+   transform: rotate(-25deg);
+   position: absolute;
+   right: 1%;
+ }
+
+ .title-img-position {
+   position: relative;
+ }
+
+ /* Footer */
+ #footer {
+   color: #8f8f8f;
+   text-align: center;
+ }
+
+ .footer-icon {
+   color: #000;
+   margin: 20px 10px;
+ }
+
+ @media (max-width: 1028px) {
+   .title-img {
+     position: static;
+     transform: rotate(0);
+   }
+ }
